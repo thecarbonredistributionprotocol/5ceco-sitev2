@@ -1,47 +1,196 @@
-Index · HTML
-Copy
-
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>5C Eco</title>
-  <meta name="description" content="Transport emissions measurement infrastructure.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Stress-test your fleet records before you bet money on them. GigaCarbon is building Route Proof to show what historical fleet records can support, what they cannot, and what evidence is missing.">
+  <link rel="canonical" href="https://5ceco.com/">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://5ceco.com/">
+  <meta property="og:title" content="GigaCarbon | Route Proof">
+  <meta property="og:description" content="Stress-test your fleet records before you bet money on them. See what historical fleet records can support, what they cannot, and what evidence is missing.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GigaCarbon | Route Proof">
+  <meta name="twitter:description" content="Stress-test your fleet records before you bet money on them. See what historical fleet records can support, what they cannot, and what evidence is missing.">
+  <title>GigaCarbon | Route Proof</title>
   <style>
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      max-width:720px;
-      margin:64px auto;
-      padding:0 16px;
-      line-height:1.5;
-      color:#111;
-      background:#fff;
-    }
-    a{color:inherit}
-    .box{
-      padding:16px;
-      border:1px solid #ddd;
-      border-radius:12px;
-      margin-top:24px;
-    }
+    :root{color-scheme:dark;--bg:#06100d;--ink:#eeeade;--green:#5bd68a;--line:rgba(119,224,164,.28);--paper:#e8e4d8;--paper-ink:#17251f}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow-x:hidden}.site-nav{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);border-bottom:1px solid rgba(238,234,222,.12)}.wordmark{font-size:clamp(21px,2vw,28px);font-weight:500;letter-spacing:-.045em}.site-nav__right,.section-eyebrow,.kicker{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.site-nav__right{color:rgba(238,234,222,.62)}
+    .hero{min-height:calc(100svh - 82px);display:grid;align-content:end;padding:clamp(36px,7vw,104px);background:radial-gradient(ellipse at 76% 42%,rgba(49,109,79,.2),transparent 43%)}.hero h1{max-width:1050px;margin:0;font:400 clamp(56px,7.4vw,112px)/.96 Georgia,serif;letter-spacing:-.055em;text-wrap:balance}
+    .story{position:relative;padding:72px clamp(24px,5vw,72px);background:radial-gradient(ellipse at 44% 32%,#10241d 0,#081511 43%,#040a08 86%)}.stage{position:relative;max-width:1160px;margin:auto;display:grid;gap:34px;isolation:isolate}.grain{position:absolute;inset:0;z-index:-1;opacity:.17;background-image:linear-gradient(rgba(93,162,129,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(93,162,129,.08) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000,transparent 78%)}.chapter{display:none}.workflow-note{padding:14px 0;border-top:1px solid rgba(238,234,222,.18);font:600 10px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,234,222,.72)}
+    .truck-wrap{display:grid;place-items:center;min-height:45svh}.truck{display:block;width:min(88vw,1340px);height:min(66vh,700px);object-fit:contain;filter:drop-shadow(0 28px 34px rgba(0,0,0,.5));will-change:transform}.traces{display:none}.sources{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.source{display:flex;align-items:center;gap:10px;padding:14px;border:1px solid rgba(119,224,164,.2);color:rgba(224,235,226,.78);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.source:before{content:"";width:6px;height:6px;border:1px solid var(--green);border-radius:50%}
+    .records{padding:clamp(18px,2.4vw,34px);border:1px solid rgba(156,197,174,.24);background:rgba(7,19,15,.92);box-shadow:0 30px 80px rgba(0,0,0,.38);transform-origin:75% 45%;will-change:transform,opacity}.records-head{display:flex;justify-content:space-between;align-items:end;padding-bottom:18px;border-bottom:1px solid var(--line)}.kicker{color:var(--green)}.records h2{margin:7px 0 0;font:400 clamp(27px,3.2vw,50px)/1 Georgia,serif;letter-spacing:-.035em}.records-meta{display:flex;align-items:center;gap:12px;color:rgba(220,231,222,.72);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.records-meta:before{content:"";width:18px;height:1px;background:var(--green)}.sheet{width:100%;margin-top:22px;border-collapse:collapse;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.sheet th,.sheet td{height:46px;padding:0 9px;border:1px solid var(--line);text-align:left}.sheet th{color:rgba(220,231,222,.8);font-weight:700}.sheet td{color:rgba(220,231,222,.72);font-variant-numeric:tabular-nums}
+    .reconcile{padding:24px 28px;border-left:1px solid var(--green);background:rgba(4,13,10,.94);will-change:transform,opacity}.source-compare{display:grid;grid-template-columns:1fr 36px 1fr;align-items:stretch;margin-top:17px}.source-record{padding:14px;border:1px solid rgba(220,231,222,.25)}.source-record strong{display:block;margin-bottom:13px;color:rgba(220,231,222,.72);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.source-record span{display:block;margin-top:6px;font:500 12px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}.join{display:grid;place-items:center;color:var(--green);font:400 20px/1 Georgia,serif}.join:before{content:"↔"}.reconcile-question{display:flex;justify-content:space-between;gap:22px;margin-top:16px;color:rgba(238,234,222,.76);font-size:11px;letter-spacing:.06em}.reconcile-question b{color:var(--ink)}.permanent-label{margin-top:11px;color:rgba(238,234,222,.66);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .decision{padding:22px 28px;border-top:1px solid var(--green);background:rgba(4,13,10,.94);will-change:transform,opacity}.consequence-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:17px;border-top:1px solid rgba(220,231,222,.2)}.consequence{padding:17px 15px 7px 0;border-right:1px solid rgba(220,231,222,.18)}.consequence+.consequence{padding-left:15px}.consequence:last-child{border-right:0}.consequence strong{display:block;margin-bottom:12px;color:var(--green);font-size:10px;line-height:1.45;letter-spacing:.13em;text-transform:uppercase}.consequence span{display:block;margin-top:7px;color:rgba(238,234,222,.74);font-size:11px;line-height:1.4}.consequence .foreground{color:var(--ink);font-weight:700}
+    .motion-ready .story{height:440vh;padding:0}.motion-ready .stage{position:sticky;top:0;max-width:none;height:100svh;margin:0;display:block;overflow:hidden;background:radial-gradient(ellipse at 44% 48%,#10241d 0,#081511 43%,#040a08 86%)}.motion-ready .stage:after{content:"";position:absolute;inset:0;z-index:20;pointer-events:none;background:linear-gradient(90deg,rgba(2,7,5,.35),transparent 22%,transparent 77%,rgba(2,7,5,.34)),linear-gradient(180deg,rgba(2,7,5,.22),transparent 25%,transparent 72%,rgba(2,7,5,.48))}.motion-ready .chapter{position:absolute;z-index:30;top:clamp(28px,4vw,58px);right:clamp(24px,5vw,72px);display:flex;gap:14px;color:rgba(238,234,222,.74);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.motion-ready .chapter b{color:var(--green)}.motion-ready .workflow-note{position:absolute;z-index:30;left:clamp(24px,4vw,60px);top:clamp(28px,4vw,58px);width:min(350px,32vw);padding:0;border:0;color:rgba(238,234,222,.66)}
+    .motion-ready .truck-wrap{position:absolute;z-index:4;inset:0;min-height:0;will-change:transform,opacity}.motion-ready .traces{position:absolute;z-index:3;inset:9% 4% 7%;display:block;overflow:visible;opacity:0}.traces path{fill:none;stroke:var(--green);stroke-width:.75;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}.traces circle{fill:var(--green);opacity:.72}.motion-ready .sources{position:absolute;z-index:8;inset:0;display:block;pointer-events:none}.motion-ready .source{position:absolute;padding:0;border:0;opacity:0;will-change:transform,opacity}.motion-ready .s1{left:13%;top:31%}.motion-ready .s2{left:18%;top:66%}.motion-ready .s3{right:17%;top:29%}.motion-ready .s4{right:12%;top:67%}
+    .motion-ready .records{position:absolute;z-index:10;right:3vw;top:11vh;width:min(64vw,980px);height:58vh;opacity:0}.motion-ready .reconcile{position:absolute;z-index:13;left:7vw;bottom:6vh;width:min(49vw,700px);opacity:0}.motion-ready .decision{position:absolute;z-index:15;right:5vw;bottom:5vh;width:min(53vw,780px);opacity:0}
+    .breath{height:clamp(110px,18vh,220px)}.normal-section{min-height:90svh;padding:clamp(72px,9vw,140px) clamp(26px,8vw,120px);display:grid;align-items:center}.normal-inner{width:min(1160px,100%);margin:auto}.section-eyebrow{margin:0 0 22px;color:#245c43}.intro{background:var(--paper);color:var(--paper-ink)}.intro h2,.idea h2,.leeds h2{max-width:1040px;margin:0;font:400 clamp(48px,6.2vw,92px)/.97 Georgia,serif;letter-spacing:-.05em;text-wrap:balance}.intro-copy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,8vw,120px);margin-top:clamp(50px,8vh,92px);padding-top:30px;border-top:1px solid rgba(23,37,31,.28)}.intro-copy p{margin:0;font:400 clamp(18px,1.55vw,23px)/1.55 Georgia,serif;color:rgba(23,37,31,.78)}.idea{background:#d9d5c8;color:var(--paper-ink);border-top:1px solid rgba(23,37,31,.15)}.idea h2 em{font-style:normal;color:#276a4a}.idea-note{margin-top:58px;max-width:560px;font-size:12px;line-height:1.7;letter-spacing:.08em;text-transform:uppercase;color:rgba(23,37,31,.66)}
+    .tested{padding:72px clamp(26px,8vw,120px) 112px;background:#eeebe2;color:var(--paper-ink)}.tested h2{max-width:1120px;margin:0;font:400 clamp(52px,5vw,76px)/1.01 Georgia,serif;letter-spacing:-.052em}.tested-intro{max-width:760px;margin:31px 0 48px;font:400 clamp(18px,1.4vw,20px)/1.5 Georgia,serif;color:rgba(23,37,31,.76)}.ledger{width:100%;border-collapse:collapse}.ledger th,.ledger td{padding:25px 30px 25px 0;border-top:1px solid rgba(23,37,31,.22);text-align:left;vertical-align:top}.ledger th{padding-top:14px;padding-bottom:14px;color:rgba(23,37,31,.62);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.ledger th:nth-child(1){width:21%}.ledger th:nth-child(2){width:44%}.ledger-test{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.ledger-question,.ledger-outcome{font:400 15px/1.5 Georgia,serif;color:rgba(23,37,31,.8)}.ledger-outcome strong{display:block;margin-bottom:7px;color:var(--paper-ink);font:800 10px/1.4 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}.flag{display:inline-block;margin-top:11px;padding:6px 8px;border:1px solid rgba(23,37,31,.35);font:800 10px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase}.flag.strong{border-color:#6d483b;color:#6d483b}
+    .method-turn{min-height:42svh;display:grid;place-items:center;padding:70px 28px;border-block:1px solid rgba(23,37,31,.14);background:#d9d5c8;color:var(--paper-ink);text-align:center}.method-turn p{margin:0;max-width:860px;font:400 clamp(44px,5.8vw,82px)/.98 Georgia,serif;letter-spacing:-.048em}.leeds{min-height:0;padding-top:clamp(100px,10vw,160px);padding-bottom:0;align-items:start;background:#f0ede4;color:var(--paper-ink)}.leeds-top{display:grid;grid-template-columns:1fr 1.5fr;gap:50px;align-items:end;padding-bottom:30px;border-bottom:1px solid rgba(23,37,31,.35)}.leeds h2{font-size:clamp(54px,7vw,104px)}.leeds-facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:34px}.leeds-facts div{padding:20px 20px 20px 0;border-right:1px solid rgba(23,37,31,.2);font-size:12px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}.leeds-facts div+div{padding-left:24px}.leeds-facts div:last-child{border:0}.leeds-story{max-width:850px;margin:50px 0 36px;font:400 clamp(22px,2.1vw,31px)/1.45 Georgia,serif}.leeds-compare{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid rgba(23,37,31,.28)}.leeds-measure{padding:30px 30px 30px 0}.leeds-measure+.leeds-measure{padding-left:30px;border-left:1px solid rgba(23,37,31,.22)}.leeds-measure span{display:block;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.leeds-measure strong{display:block;margin:15px 0 8px;font:400 clamp(42px,5vw,72px)/1 Georgia,serif}.leeds-measure em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.leeds-note{max-width:780px;margin:34px 0;font:400 20px/1.55 Georgia,serif}.leeds-retraction{display:grid;gap:8px;padding-top:24px;border-top:1px solid rgba(23,37,31,.2);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.method-change{max-width:860px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(23,37,31,.24)}.method-change h3,.contact-label{margin:0 0 12px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.method-change p{margin:0;font:400 18px/1.55 Georgia,serif}.method-change p+p{margin-top:12px;color:rgba(23,37,31,.68);font-size:15px}.continuation{display:inline-block;color:inherit;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:7px;cursor:pointer;transition:opacity .18s ease,text-decoration-color .18s ease}.continuation:hover{opacity:.62;text-decoration-color:currentColor}.continuation:focus-visible,.contact-email:focus-visible{outline:2px solid currentColor;outline-offset:6px}.continuation+.continuation{margin-left:clamp(24px,5vw,72px)}.continuation-wrap{padding:48px clamp(26px,8vw,120px) 60px;background:#f0ede4;color:var(--paper-ink)}.contact-line{margin-top:30px;padding-top:24px;border-top:1px solid rgba(23,37,31,.18)}.contact-label{display:block;margin-bottom:8px;color:rgba(23,37,31,.58)}.contact-email{color:rgba(23,37,31,.76);font:400 14px/1.4 Georgia,serif;text-underline-offset:4px}#product,#evidence,#method{scroll-margin-top:48px}
+    @media(max-width:700px){.site-nav{height:68px;padding:0 22px}.hero{min-height:calc(92svh - 68px);padding:34px 22px 62px}.hero h1{font-size:clamp(49px,14vw,66px)}.story{padding:72px 22px}.stage{gap:28px}.truck-wrap{min-height:34svh}.truck{width:100%;height:auto;max-height:36svh}.sources{grid-template-columns:1fr 1fr}.records{padding:18px;overflow-x:auto}.records-head{display:block}.records-meta{margin-top:12px}.sheet{min-width:680px;font-size:9px}.sheet th,.sheet td{height:38px;padding:6px}.source-compare{grid-template-columns:1fr}.join{min-height:32px}.join:before{content:"↕"}.reconcile-question{display:block}.reconcile-question span{display:block;margin-top:8px}.consequence-grid{grid-template-columns:1fr}.consequence,.consequence+.consequence{padding:15px 0;border-right:0;border-bottom:1px solid rgba(220,231,222,.18)}.workflow-note{font-size:10px}.breath{height:100px}.normal-section{min-height:auto;padding:90px 24px}.intro h2,.idea h2,.leeds h2{font-size:clamp(48px,14vw,66px)}.intro-copy,.leeds-top{grid-template-columns:1fr;gap:26px}.tested{padding:72px 24px 90px}.tested h2{font-size:clamp(46px,13vw,60px)}.tested-intro{margin:28px 0 42px;font-size:18px}.ledger,.ledger tbody,.ledger tr,.ledger td{display:block}.ledger thead{display:none}.ledger tr{padding:28px 0;border-top:1px solid rgba(23,37,31,.22)}.ledger td{padding:0;border:0}.ledger td+td{margin-top:16px}.ledger-question:before,.ledger-outcome:before{display:block;margin-bottom:6px;font:800 10px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(23,37,31,.58)}.ledger-question:before{content:"Question"}.ledger-outcome:before{content:"Outcome / status"}.method-turn{min-height:52svh;padding:70px 24px}.method-turn p{font-size:clamp(44px,13vw,62px)}.leeds{padding-top:90px;padding-bottom:0}.leeds-facts,.leeds-compare{grid-template-columns:1fr}.leeds-facts div,.leeds-facts div+div{padding:18px 0;border-right:0;border-bottom:1px solid rgba(23,37,31,.2)}.leeds-measure,.leeds-measure+.leeds-measure{padding:26px 0;border-left:0}.leeds-measure+.leeds-measure{border-top:1px solid rgba(23,37,31,.22)}.method-change{margin-top:34px;padding-top:24px}.continuation-wrap{padding-top:40px;padding-bottom:48px}.continuation+.continuation{margin-left:20px}.contact-line{margin-top:24px;padding-top:20px}#product,#evidence,#method{scroll-margin-top:36px}}
+    @media(prefers-reduced-motion:reduce){html.motion-ready .story{height:auto;padding:72px clamp(24px,5vw,72px)}html.motion-ready .stage{position:relative;height:auto;max-width:1160px;margin:auto;display:grid;gap:34px;overflow:visible}html.motion-ready .chapter{display:none}html.motion-ready .truck-wrap,html.motion-ready .records,html.motion-ready .reconcile,html.motion-ready .decision,html.motion-ready .workflow-note{position:relative;inset:auto;width:auto;height:auto;opacity:1;transform:none}html.motion-ready .sources{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}html.motion-ready .source{position:relative;inset:auto;padding:14px;border:1px solid rgba(119,224,164,.2);opacity:1}html.motion-ready .traces{display:none}}
   </style>
 </head>
 <body>
-
-  <h1>5C Eco</h1>
-
-  <p>Transport emissions measurement infrastructure.</p>
-
-  <p>
-    We run pilot programs to understand driving patterns and design future
-    fuel-saving and reward initiatives.
-  </p>
-
-  <div class="box">
-    <strong>Pilot sign-up:</strong><br />
-    <a href="/pilot">5ceco.com/pilot</a>
+  <div class="site-nav">
+    <div class="wordmark">GigaCarbon</div>
+    <div class="site-nav__right">Route Proof</div>
   </div>
-
+  <header class="hero">
+    <div>
+      <h1>Stress-test your fleet records before you bet money on them.</h1>
+    </div>
+  </header>
+  <main>
+    <section class="story" aria-label="How a physical fleet becomes a business decision">
+      <div class="stage">
+        <div class="grain" aria-hidden="true"></div>
+        <div class="chapter" aria-hidden="true"><b>01 / 05</b><span>The physical fleet</span></div>
+        <div class="workflow-note">Illustrative workflow<br>The problem we are building for<br>Not Route Proof output<br>Route Proof today reads one historical source per run</div>
+        <div class="truck-wrap"><img class="truck" src="assets/truck-top-transparent.png" width="1536" height="1024" alt="Top-down view of a complete semi truck and trailer"></div>
+        <svg class="traces" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M55 180 C220 150 280 240 445 270 S720 205 945 235" pathLength="1"/><path d="M40 390 C210 430 300 330 465 325 S720 420 960 365" pathLength="1"/><path d="M95 95 C290 145 295 235 475 280 S760 280 930 115" pathLength="1"/><path d="M80 520 C250 470 340 390 490 335 S730 335 925 510" pathLength="1"/>
+          <circle cx="55" cy="180" r="2.6"/><circle cx="40" cy="390" r="2.6"/><circle cx="95" cy="95" r="2.6"/><circle cx="80" cy="520" r="2.6"/>
+        </svg>
+        <div class="sources" aria-hidden="true"><div class="source s1">Telematics</div><div class="source s2">Fuel</div><div class="source s3">Maintenance</div><div class="source s4">Jobs / Mileage</div></div>
+        <section class="records" aria-label="Operational records">
+          <div class="records-head"><div><div class="kicker">Records</div><h2>Consolidated operating record</h2></div><div class="records-meta">Illustrative</div></div>
+          <table class="sheet">
+            <thead><tr><th>Vehicle</th><th>Date</th><th>Source</th><th>Distance</th><th>Fuel</th><th>Event</th></tr></thead>
+            <tbody>
+              <tr><td>UNIT-014</td><td>14 AUG</td><td>TELEMATICS</td><td>184.2 MI</td><td>—</td><td>TRIP</td></tr>
+              <tr><td>UNIT-014</td><td>14 AUG</td><td>FUEL CARD</td><td>—</td><td>62.4 L</td><td>FUEL</td></tr>
+              <tr><td>UNIT-027</td><td>14 AUG</td><td>MAINTENANCE</td><td>—</td><td>—</td><td>SERVICE</td></tr>
+              <tr><td>UNIT-031</td><td>15 AUG</td><td>TELEMATICS</td><td>96.8 MI</td><td>—</td><td>TRIP</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="reconcile">
+          <div class="kicker">Somebody checks this by hand</div>
+          <div class="source-compare">
+            <div class="source-record"><strong>Telematics export</strong><span>AB12 CDE</span><span>14 AUG</span><span>184.2 MI</span></div>
+            <div class="join" aria-hidden="true"></div>
+            <div class="source-record"><strong>Fuel card export</strong><span>AB12CDE</span><span>14 AUG</span><span>62.4 L</span></div>
+          </div>
+          <div class="reconcile-question"><b>Same vehicle?</b><span>Somebody still has to decide.</span></div>
+          <div class="permanent-label">Illustrative</div>
+        </section>
+        <section class="decision">
+          <div class="kicker">Records support decisions</div>
+          <div class="consequence-grid">
+            <div class="consequence"><strong>Financial</strong><span>Pay / challenge an invoice</span></div>
+            <div class="consequence"><strong>Operational</strong><span>Repair / investigate / schedule</span></div>
+            <div class="consequence"><strong>Sustainability / capital</strong><span>Report fuel</span><span class="foreground">Replace an asset</span><span>Justify investment</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <div class="breath" aria-hidden="true"></div>
+    <section class="normal-section intro" id="product">
+      <div class="normal-inner">
+        <p class="section-eyebrow">GigaCarbon</p>
+        <h2>The decision is only as defensible as the records beneath it.</h2>
+        <div class="intro-copy">
+          <p>Operational teams already make decisions from historical records. The harder question is whether those records actually contain enough evidence for the conclusion being made.</p>
+          <p>Today, Route Proof reads one historical source at a time and reports what that record can support, what it cannot, and what is missing.</p>
+        </div>
+      </div>
+    </section>
+    <section class="normal-section idea">
+      <div class="normal-inner">
+        <p class="section-eyebrow">The core idea</p>
+        <h2>A record is not simply good or bad. It is <em>sufficient or insufficient</em> for a particular question.</h2>
+        <div class="idea-note">Evidence sufficiency depends on the question.</div>
+      </div>
+    </section>
+    <section class="tested" id="evidence">
+      <div class="normal-inner">
+        <p class="section-eyebrow">What we've actually tested</p>
+        <h2>A research ledger, including where the method fails.</h2>
+        <p class="tested-intro">We test the method against different kinds of operational records — including cases where it supports a conclusion, refuses one, changes a classification, or exposes a failure in our own method.</p>
+        <table class="ledger">
+          <thead><tr><th>Test</th><th>Question</th><th>Outcome / status</th></tr></thead>
+          <tbody>
+            <tr><td class="ledger-test">Leeds</td><td class="ledger-question">Can the published records independently support fuel-efficiency comparison?</td><td class="ledger-outcome"><strong>0 / 1,482 independently recomputable</strong>An earlier ~83% claim was retracted.</td></tr>
+            <tr><td class="ledger-test">Mesa</td><td class="ledger-question">Can the same method affirm a narrower conclusion when the evidence is actually present?</td><td class="ledger-outcome"><strong>110,976 eligible records supported</strong>For the narrower aggregate source-reported-quantity question.<br><span class="flag">Positive control</span></td></tr>
+            <tr><td class="ledger-test">Cincinnati</td><td class="ledger-question">Can evidence requirements materially change an operational classification?</td><td class="ledger-outcome"><strong>14 / 134 active assets changed classification</strong>Under the evidence-bounded treatment. This does not imply paired-source reconciliation.</td></tr>
+            <tr><td class="ledger-test">Synthetic GPS</td><td class="ledger-question">What should happen when movement occurs during a recording gap?</td><td class="ledger-outcome"><strong>95.3 km observed</strong>126.1 km endpoint displacement kept separate. Total route distance not established.<br><span class="flag strong">Synthetic · self-scored engine test · not customer validation</span></td></tr>
+            <tr><td class="ledger-test">Madagascar</td><td class="ledger-question">Can the method identify consequential workbook problems and support decision-triage?</td><td class="ledger-outcome"><strong>Mixed</strong>The method located consequential workbook problems but failed decision-triage.</td></tr>
+            <tr><td class="ledger-test">WCC</td><td class="ledger-question">Could the required evidence be retrieved sufficiently to run the intended benchmark?</td><td class="ledger-outcome"><strong>Negative feasibility result</strong>Required evidence could not be retrieved sufficiently to run the intended benchmark.</td></tr>
+            <tr><td class="ledger-test">Epistemic-restraint protocol</td><td class="ledger-question">Registered protocol awaiting execution.</td><td class="ledger-outcome"><strong>Registered / unrun</strong>No result yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="method-turn"><p>One of these tests changed the method.</p></section>
+    <section class="normal-section leeds" id="method">
+      <div class="normal-inner">
+        <div class="leeds-top"><p class="section-eyebrow">Public data<br>Method demonstration</p><h2>Leeds</h2></div>
+        <div class="leeds-facts"><div>One real file</div><div>1,482 records</div><div>Two questions</div></div>
+        <p class="leeds-story">We originally reported that roughly 83% of the fleet could be compared on fuel efficiency. The analysis was reproducible. The conclusion was not supported.</p>
+        <div class="leeds-compare">
+          <div class="leeds-measure"><span>What the source reports</span><strong>1,259 / 1,482</strong><em>Reported by source</em></div>
+          <div class="leeds-measure"><span>What we can independently recompute</span><strong>0 / 1,482</strong><em>Not established</em></div>
+        </div>
+        <p class="leeds-note">The published record did not contain the per-vehicle fuel quantity required to recompute fuel efficiency.</p>
+        <div class="leeds-retraction"><span>The original ~83% claim was retracted.</span><span>The failed output was retained as a regression fixture.</span></div>
+        <div class="method-change">
+          <h3>What changed after Leeds</h3>
+          <p>We now separate what a source reports from what we can independently recompute. If a conclusion requires evidence the record does not contain, the result is reported as not established rather than filled in by assumption.</p>
+          <p>The failed analysis was retained as a regression fixture so the same mistake is tested against going forward.</p>
+        </div>
+      </div>
+    </section>
+    <div class="continuation-wrap">
+      <a class="continuation" href="#product">Product</a><a class="continuation" href="#evidence">Evidence</a><a class="continuation" href="#method">Method</a>
+      <div class="contact-line"><span class="contact-label">Contact</span><a class="contact-email" href="mailto:contact@5ceco.com">contact@5ceco.com</a></div>
+    </div>
+  </main>
+  <script type="module">
+    const story=document.querySelector('.story'),truckWrap=document.querySelector('.truck-wrap'),truck=document.querySelector('.truck'),traces=document.querySelector('.traces'),paths=[...document.querySelectorAll('.traces path')],sources=[...document.querySelectorAll('.source')],records=document.querySelector('.records'),reconcile=document.querySelector('.reconcile'),decision=document.querySelector('.decision'),chapterNumber=document.querySelector('.chapter b'),chapterLabel=document.querySelector('.chapter span');
+    const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),range=(p,a,b)=>clamp((p-a)/(b-a)),fade=(p,a,b,c,d)=>Math.min(range(p,a,b),1-range(p,c,d));
+    const chapters=['The physical fleet','Different systems record it','The records take over','Somebody checks this by hand','Records support decisions'];
+    const motionQuery=matchMedia('(min-width:701px) and (prefers-reduced-motion:no-preference)');
+    let scrollApi=null,scrollCleanup=null,setupGeneration=0;
+    const clearMotionStyles=()=>{
+      [truckWrap,truck,traces,records,reconcile,decision,...sources,...paths].forEach(el=>el.removeAttribute('style'));
+    };
+    const teardownMotion=()=>{
+      setupGeneration+=1;
+      if(typeof scrollCleanup==='function')scrollCleanup();else scrollCleanup?.cancel?.();
+      scrollCleanup=null;
+      document.documentElement.classList.remove('motion-ready');
+      clearMotionStyles();
+    };
+    const initializeMotion=()=>{
+      if(!scrollApi||!motionQuery.matches||scrollCleanup||document.documentElement.classList.contains('motion-ready'))return;
+      const generation=++setupGeneration;
+      document.documentElement.classList.add('motion-ready');
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        if(generation!==setupGeneration||!motionQuery.matches)return teardownMotion();
+        scrollCleanup=scrollApi(p=>{
+          const shrink=range(p,.28,.62),drift=range(p,.04,.38);
+          truckWrap.style.transform=`translate3d(${(-28*shrink+5*drift).toFixed(2)}vw,${(13*shrink).toFixed(2)}vh,0) scale(${(1-.66*shrink).toFixed(4)}) rotate(${(-.7*shrink).toFixed(3)}deg)`;
+          truck.style.opacity=(1-.42*range(p,.62,.82)).toFixed(3);
+          const traceP=fade(p,.08,.2,.5,.68);traces.style.opacity=(traceP*.78).toFixed(3);paths.forEach((path,i)=>path.style.strokeDashoffset=(1-clamp(range(p,.1+i*.025,.36+i*.025))).toFixed(3));
+          sources.forEach((el,i)=>{const q=fade(p,.16+i*.018,.26+i*.018,.45,.58);el.style.opacity=q.toFixed(3);el.style.transform=`translate3d(${((1-q)*(i%2?14:-14)).toFixed(2)}px,0,0)`});
+          const r=range(p,.32,.62);records.style.opacity=range(p,.3,.43).toFixed(3);records.style.transform=`translate3d(${((1-r)*26).toFixed(2)}vw,${((1-r)*7).toFixed(2)}vh,0) scale(${(.58+.42*r).toFixed(4)})`;
+          const rec=fade(p,.61,.7,.79,.88);reconcile.style.opacity=rec.toFixed(3);reconcile.style.transform=`translate3d(0,${((1-rec)*35).toFixed(2)}px,0)`;
+          const dec=range(p,.8,.89);decision.style.opacity=dec.toFixed(3);decision.style.transform=`translate3d(${((1-dec)*34).toFixed(2)}px,0,0)`;
+          const chapterIndex=p<.18?0:p<.42?1:p<.68?2:p<.88?3:4;chapterNumber.textContent=`${String(chapterIndex+1).padStart(2,'0')} / 05`;chapterLabel.textContent=chapters[chapterIndex];
+        },{target:story,offset:['start start','end end']});
+      }));
+    };
+    const syncMotion=()=>motionQuery.matches?initializeMotion():teardownMotion();
+    motionQuery.addEventListener('change',syncMotion);
+    try{
+      if(new URLSearchParams(location.search).get('motion')==='blocked')throw new Error('Motion intentionally unavailable for fallback QA');
+      ({scroll:scrollApi}=await import('https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm'));
+      initializeMotion();
+    }catch(_error){/* Visible static workflow is the intentional fallback. */}
+    addEventListener('pagehide',teardownMotion,{once:true});
+  </script>
 </body>
 </html>
