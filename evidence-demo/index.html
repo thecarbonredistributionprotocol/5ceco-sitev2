@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A synthetic GigaCarbon walkthrough showing how conflicting vehicle attribution remains unresolved until a cited human decision is accepted.">
+  <link rel="canonical" href="https://5ceco.com/evidence-demo/">
+  <title>Evidence Demo | GigaCarbon</title>
+  <style>
+    :root{color-scheme:dark;--bg:#06100d;--panel:#0b1914;--ink:#eeeade;--muted:#9aaba2;--green:#5bd68a;--amber:#d4a369;--line:rgba(119,224,164,.22);--paper:#e9e5da;--paper-ink:#17251f}
+    *{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.site-nav{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);border-bottom:1px solid rgba(238,234,222,.12)}.wordmark{color:inherit;font-size:clamp(21px,2vw,28px);font-weight:500;letter-spacing:-.045em;text-decoration:none}.site-nav__right,.eyebrow,.label,.status{font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.site-nav__right{color:rgba(238,234,222,.62)}main{width:min(1180px,calc(100% - 48px));margin:auto;padding:clamp(64px,8vw,112px) 0}.eyebrow{margin:0 0 18px;color:var(--green)}h1{max-width:970px;margin:0;font:400 clamp(50px,6.6vw,92px)/.98 Georgia,serif;letter-spacing:-.052em;text-wrap:balance}.intro{max-width:720px;margin:28px 0 0;color:var(--muted);font:400 clamp(18px,1.5vw,21px)/1.55 Georgia,serif}.boundary{margin:34px 0 52px;padding:17px 20px;border-left:2px solid var(--green);background:rgba(91,214,138,.06);color:var(--muted);font-size:12px}.controls{display:flex;gap:10px;margin-bottom:18px}.control{padding:11px 15px;border:1px solid rgba(238,234,222,.25);background:transparent;color:var(--ink);font:800 10px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}.control[aria-pressed="true"]{border-color:var(--green);background:rgba(91,214,138,.11);color:var(--green)}.control:focus-visible,a:focus-visible{outline:2px solid currentColor;outline-offset:5px}.case{border:1px solid var(--line);background:var(--panel);box-shadow:0 26px 80px rgba(0,0,0,.28)}.case-head{display:flex;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid var(--line)}.case-head h2{margin:7px 0 0;font:400 clamp(27px,3vw,42px)/1.05 Georgia,serif;letter-spacing:-.03em}.label{color:var(--green)}.status{align-self:center;padding:8px 10px;border:1px solid var(--amber);color:var(--amber);white-space:nowrap}.status.ready{border-color:var(--green);color:var(--green)}.records{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.record{padding:26px 28px}.record+.record{border-left:1px solid var(--line)}.record h3{margin:0 0 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.record dl{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0}.record dt,.record dd{margin:0;padding:10px 0;border-top:1px solid rgba(238,234,222,.11);font:500 12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}.record dt{color:var(--muted)}.record dd{text-align:right}.conflict{color:var(--amber);font-weight:800}.analysis{display:grid;grid-template-columns:1fr 1fr}.analysis section{padding:26px 28px}.analysis section+section{border-left:1px solid var(--line)}.analysis h3{margin:0 0 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.analysis p{margin:8px 0;color:var(--muted);font-size:13px}.analysis strong{color:var(--ink)}.resolution{margin-top:18px;padding:18px;border-left:2px solid var(--amber);background:rgba(212,163,105,.07)}.resolution.accepted{border-color:var(--green);background:rgba(91,214,138,.07)}.readiness{padding:22px 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px}.readiness p{margin:0;color:var(--muted)}.readiness strong{color:var(--ink)}.method-note{margin-top:52px;padding:clamp(30px,5vw,58px);background:var(--paper);color:var(--paper-ink)}.method-note h2{max-width:760px;margin:0;font:400 clamp(35px,4vw,56px)/1.05 Georgia,serif;letter-spacing:-.04em}.method-note p{max-width:760px;margin:22px 0 0;color:rgba(23,37,31,.72);font:400 17px/1.55 Georgia,serif}.site-footer{padding:34px clamp(24px,5vw,72px) 42px;border-top:1px solid rgba(238,234,222,.16);color:rgba(238,234,222,.68);font-size:11px}.site-footer__inner{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:minmax(260px,1.6fr) 1fr;gap:28px 60px}.site-footer p{margin:0}.site-footer strong{color:var(--ink)}.site-footer a{color:inherit;text-underline-offset:4px}.site-footer__links{display:flex;flex-wrap:wrap;align-content:start;gap:12px 24px}[hidden]{display:none!important}@media(max-width:720px){.site-nav{height:68px;padding:0 22px}main{width:min(100% - 40px,1180px);padding:60px 0}.controls{display:grid;grid-template-columns:1fr 1fr}.case-head,.readiness{display:block}.status{display:inline-block;margin-top:18px}.records,.analysis{grid-template-columns:1fr}.record+.record,.analysis section+section{border-left:0;border-top:1px solid var(--line)}.record,.analysis section,.case-head,.readiness{padding:22px}.readiness p+p{margin-top:12px}.site-footer{padding:30px 22px 36px}.site-footer__inner{grid-template-columns:1fr;gap:22px}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary"><a class="wordmark" href="/">GigaCarbon</a><span class="site-nav__right">Evidence Demo</span></nav>
+  <main>
+    <p class="eyebrow">Synthetic wrong-vehicle example</p>
+    <h1>Two records agree on the event—and disagree on the vehicle.</h1>
+    <p class="intro">The conflict is preserved until a named person accepts a correction supported by cited operational context.</p>
+    <div class="boundary"><strong>Synthetic · prototype-derived · not customer validation.</strong> This page is a static walkthrough of an existing test fixture. It does not ingest records, call the prototype engine or demonstrate a production deployment.</div>
+
+    <div class="controls" aria-label="Choose evidence state">
+      <button class="control" type="button" aria-pressed="true" data-view="open">Open conflict</button>
+      <button class="control" type="button" aria-pressed="false" data-view="accepted">Accepted resolution</button>
+    </div>
+
+    <article class="case" aria-live="polite">
+      <header class="case-head">
+        <div><span class="label">Case</span><h2 id="case-title">Wrong-vehicle attribution</h2></div>
+        <span class="status" id="case-status">Human judgement required</span>
+      </header>
+      <div class="records">
+        <section class="record">
+          <h3>Fuel Portal Report</h3>
+          <dl><dt>Vehicle</dt><dd class="conflict">VEHICLE-X</dd><dt>Event date</dt><dd>2026-07-31</dd><dt>Quantity</dt><dd>82.5</dd><dt>Station</dt><dd>SYNTHETIC-STATION-04</dd><dt>Total</dt><dd>136.95</dd><dt>Odometer entered</dt><dd>125,630</dd></dl>
+        </section>
+        <section class="record">
+          <h3>Field Report</h3>
+          <dl><dt>Vehicle</dt><dd class="conflict">VEHICLE-Y</dd><dt>Event date</dt><dd>2026-07-31</dd><dt>Quantity</dt><dd>82.5</dd><dt>Station</dt><dd>SYNTHETIC-STATION-04</dd><dt>Total</dt><dd>136.95</dd><dt>Current odometer</dt><dd>125,630</dd></dl>
+        </section>
+      </div>
+      <div class="analysis">
+        <section><h3>Established without judgement</h3><p><strong>Candidate records are linked for review.</strong></p><p>The date, quantity, station and total amount agree. Both records also contain 125,630 in differently labelled odometer fields. Candidate status is not proof that the two records are equivalent.</p><p><strong id="conflict-label">Open conflict:</strong> vehicle_number is X in the portal and Y in the field report.</p></section>
+        <section>
+          <h3>Additional context</h3><p>A synthetic breakdown log says VEHICLE-X was out of service and VEHICLE-Y was the backup vehicle.</p>
+          <div class="resolution" id="open-resolution"><strong>Proposed correction</strong><p>Accept VEHICLE-Y based on the breakdown log. Operator acceptance is still required.</p></div>
+          <div class="resolution accepted" id="accepted-resolution" hidden><strong>Accepted human resolution</strong><p>synthetic-operator-01 reviewed the breakdown log and confirmed VEHICLE-Y received the fuel on 4 August 2026.</p></div>
+        </section>
+      </div>
+      <footer class="readiness"><p><strong>Original observations retained:</strong> X remains in the portal record; Y remains in the field record.</p><p><strong>Downstream readiness:</strong> <span id="readiness-value">blocked</span></p></footer>
+    </article>
+
+    <section class="method-note"><h2>A plausible correction is not an accepted fact.</h2><p>The breakdown log supplies relevant context, but the unresolved state remains blocked. Only the accepted state records a named resolver, cited evidence, a basis, and a resolution time. The original source observations are never overwritten.</p></section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p><strong>GigaCarbon Ltd</strong><br>Company No. 16597413 · Registered in England and Wales<br>Registered office: Flat 38 Royal Belgrave House, Hugh Street, London, England, SW1V 1RR</p>
+      <div class="site-footer__links"><a href="mailto:contact@5ceco.com">contact@5ceco.com</a><a href="/evidence-demo/" aria-current="page">Evidence Demo</a><a href="/privacy/">Privacy Policy</a><a href="/data-handling/">Data Handling / First Review</a></div>
+    </div>
+  </footer>
+  <script>
+    const controls=[...document.querySelectorAll('[data-view]')];
+    const status=document.querySelector('#case-status');
+    const openResolution=document.querySelector('#open-resolution');
+    const acceptedResolution=document.querySelector('#accepted-resolution');
+    const readiness=document.querySelector('#readiness-value');
+    const conflictLabel=document.querySelector('#conflict-label');
+    controls.forEach(control=>control.addEventListener('click',()=>{
+      const accepted=control.dataset.view==='accepted';
+      controls.forEach(item=>item.setAttribute('aria-pressed',String(item===control)));
+      openResolution.hidden=accepted;
+      acceptedResolution.hidden=!accepted;
+      status.textContent=accepted?'Resolution accepted':'Human judgement required';
+      status.classList.toggle('ready',accepted);
+      conflictLabel.textContent=accepted?'Resolved source conflict:':'Open conflict:';
+      readiness.textContent=accepted?'ready with accepted VEHICLE-Y attribution':'blocked';
+    }));
+  </script>
+</body>
+</html>
