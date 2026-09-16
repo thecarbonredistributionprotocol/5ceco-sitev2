@@ -28,3 +28,17 @@ odometers, decide whether an absent field entry means an event did not happen,
 or accept a correction without a named resolver and cited evidence.
 
 This is not production-ready and does not ingest real company records.
+
+## Additive generic primitives
+
+`evidence_item.py` defines a domain-neutral `EvidenceItem` with the states
+`SUPPORTED`, `CONFLICTING`, `MISSING`, `NOT_ESTABLISHED`, and
+`HUMAN_JUDGEMENT_REQUIRED`. It is separate from the existing `EvidenceState`,
+so existing source, conflict, gap, resolution, and serialization behavior is
+unchanged.
+
+`comparison.py` compares immutable JSON artifact identities using only
+human-authored `ComparisonItem` decisions. It does not infer matches or call a
+model. It produces per-case and aggregate classification counts, canonical
+JSON, and a SHA-256 over the canonical comparison payload. Its output writer
+uses exclusive creation and refuses either source artifact as an output path.
