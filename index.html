@@ -3,334 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="GigaCarbon structures conflicting and incomplete operational records into traceable evidence before an expert makes the call.">
+  <meta name="description" content="GigaCarbon cross-checks fleet-maintenance records and brings inconsistencies and missing evidence into view. Demonstrated on synthetic records; real-world validation pending.">
   <link rel="canonical" href="https://5ceco.com/">
+  <link rel="icon" type="image/png" href="/assets/gigacarbon-triangle.png">
+  <link rel="stylesheet" href="/assets/site.css">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://5ceco.com/">
-  <meta property="og:title" content="GigaCarbon | Traceable operational evidence">
-  <meta property="og:description" content="Messy records in. Traceable evidence out. See what agrees, what conflicts, what is missing, and how an accepted value was reached.">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="GigaCarbon | Traceable operational evidence">
-  <meta name="twitter:description" content="Messy records in. Traceable evidence out. See what agrees, what conflicts, what is missing, and how an accepted value was reached.">
-  <title>GigaCarbon | Traceable operational evidence</title>
+  <meta property="og:title" content="GigaCarbon — Maintenance records, read together.">
+  <meta property="og:description" content="Source-linked fleet-maintenance questions. Demonstrated on synthetic data; real-world validation pending.">
+  <meta property="og:image" content="https://5ceco.com/assets/workbench/fn128-evidence.png">
+  <meta property="og:image:alt" content="Synthetic GigaCarbon Review Workbench capture with an FN128 question and cited source chronology">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://5ceco.com/assets/workbench/fn128-evidence.png">
+  <title>GigaCarbon — Maintenance records, read together.</title>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GigaCarbon Ltd",
-      "url": "https://5ceco.com/",
-      "email": "contact@5ceco.com",
-      "identifier": "Company No. 16597413",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Flat 38 Royal Belgrave House, Hugh Street",
-        "addressLocality": "London",
-        "postalCode": "SW1V 1RR",
-        "addressCountry": "GB"
-      }
-    }
+    {"@context":"https://schema.org","@type":"Organization","name":"GigaCarbon Ltd","url":"https://5ceco.com/","email":"contact@5ceco.com","identifier":"Company No. 16597413","address":{"@type":"PostalAddress","streetAddress":"Flat 38 Royal Belgrave House, Hugh Street","addressLocality":"London","postalCode":"SW1V 1RR","addressCountry":"GB"}}
   </script>
-  <style>
-    :root{color-scheme:light;--deep:#1e3d2b;--mid:#2c5f3e;--olive:#7c8259;--pale:#eaf2e7;--white:#fff;--ink:#17251f;--muted:#56655d;--line:rgba(30,61,43,.2);--warm:#f4f1e8}
-
-    *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-html,body{margin:0}
-body{overflow-x:hidden;background:var(--white);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:inherit;text-underline-offset:5px}
-a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:5px}
-.site-nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,72px);background:var(--deep);color:var(--white);border-bottom:1px solid rgba(255,255,255,.14)}
-.wordmark{font-size:clamp(21px,2vw,28px);font-weight:500;letter-spacing:-.045em}
-.nav-link,.eyebrow,.label,.status,.research-name{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
-.nav-link{color:rgba(255,255,255,.76);text-decoration:none}
-.nav-link:hover{text-decoration:underline}
-
-    .hero{min-height:calc(100svh - 78px);display:grid;align-items:end;padding:clamp(58px,8vw,118px) clamp(24px,8vw,120px);background:var(--deep);color:var(--white)}
-.hero-inner{width:min(1180px,100%);margin:auto}
-.hero .eyebrow{margin:0 0 24px;color:#b8d4bc}
-.hero h1{max-width:1060px;margin:0;font:400 clamp(64px,8vw,120px)/.91 Georgia,serif;letter-spacing:-.06em;text-wrap:balance}
-.hero-copy{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);gap:clamp(30px,8vw,110px);align-items:end;margin-top:clamp(42px,7vh,78px);padding-top:28px;border-top:1px solid rgba(255,255,255,.2)}
-.hero-copy p{max-width:760px;margin:0;color:rgba(255,255,255,.79);font:400 clamp(18px,1.6vw,23px)/1.55 Georgia,serif}
-.status{margin-top:18px;color:#b8d4bc}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.42);color:var(--white);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
-.button.primary{background:var(--white);color:var(--deep);border-color:var(--white)}
-.button:hover{opacity:.76}
-
-    .walkthrough{padding:clamp(76px,9vw,132px) clamp(24px,8vw,120px);background:#07130e;color:#f5f3eb}
-    .walkthrough .eyebrow{color:#8fdaa9}
-    .walkthrough h2{max-width:980px;margin:0;font:400 clamp(44px,5.6vw,78px)/.98 Georgia,serif;letter-spacing:-.05em;text-wrap:balance}
-    .walkthrough-intro{max-width:760px;margin:24px 0 0;color:rgba(245,243,235,.68);font:400 clamp(17px,1.5vw,21px)/1.55 Georgia,serif}
-    .walk-sequence{display:grid;gap:18px;margin-top:clamp(48px,6vw,72px)}
-    .walk-sources{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:16px}
-    .walk-card,.walk-panel{border:1px solid rgba(143,218,169,.27);background:rgba(9,26,18,.9)}
-    .walk-card{min-width:0;padding:20px}
-    .walk-card strong,.walk-label{display:block;color:#8fdaa9;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-    .walk-card span{display:block;margin-top:7px;font:500 13px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
-    .walk-not-equal{display:grid;place-items:center;color:#d0ab74;font:400 clamp(30px,4vw,50px)/1 Georgia,serif}
-    .walk-source-payoff{grid-column:1/-1;margin:2px 0 0;color:rgba(245,243,235,.76);font:400 17px/1.5 Georgia,serif}
-    .walk-state{padding:clamp(22px,3vw,34px)}
-    .walk-state h3,.walk-resolution h3{margin:9px 0 22px;font:400 clamp(28px,3.4vw,46px)/1.05 Georgia,serif;letter-spacing:-.035em}
-    .walk-state-grid{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid rgba(245,243,235,.16)}
-    .walk-state-item{padding:18px 18px 19px 0}
-    .walk-state-item+.walk-state-item{padding-left:18px;border-left:1px solid rgba(245,243,235,.16)}
-    .walk-state-item b{display:block;margin-bottom:10px;color:#8fdaa9;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
-    .walk-state-item span{display:block;color:rgba(245,243,235,.75);font:400 14px/1.48 Georgia,serif}
-    .walk-principles{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;color:rgba(245,243,235,.64);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-    .walk-provenance-line{margin:18px 0 0;color:rgba(245,243,235,.58);font:400 13px/1.5 Georgia,serif}
-    .walk-resolution{padding:clamp(22px,3vw,34px)}
-    .walk-resolution-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px}
-    .walk-accepted{padding:22px;border-left:2px solid #8fdaa9;background:rgba(143,218,169,.07)}
-    .walk-accepted span,.walk-provenance span{display:block;color:#8fdaa9;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-    .walk-accepted strong{display:block;margin-top:12px;font:400 clamp(34px,4vw,58px)/1 Georgia,serif}
-    .walk-provenance{padding:8px 0}
-    .walk-provenance span{color:rgba(245,243,235,.55)}
-    .walk-provenance p{margin:12px 0 0;color:rgba(245,243,235,.78);font:400 15px/1.5 Georgia,serif}
-    .walk-provenance strong{color:#d8ddba}
-    .walk-payoff{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(245,243,235,.18)}
-    .walk-payoff p{margin:0;font:400 clamp(25px,3vw,40px)/1.18 Georgia,serif}
-    .walk-payoff strong{color:#8fdaa9;font-weight:400}
-    .walk-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 30px;margin-top:24px}
-    .walk-footer .synthetic-label{margin:0}
-    .walk-footer .editorial-link{display:inline-flex;align-items:center;min-height:44px;color:#f5f3eb}
-    .walkthrough.walk-enhanced .walk-reveal{opacity:0;transform:translateY(12px)}
-    .walkthrough.walk-enhanced.is-visible .walk-reveal{opacity:1;transform:none;transition:opacity 260ms cubic-bezier(.2,0,0,1),transform 260ms cubic-bezier(.2,0,0,1);transition-delay:var(--reveal-delay,0ms)}
-
-    .section{padding:clamp(78px,10vw,150px) clamp(24px,8vw,120px)}
-.inner{width:min(1180px,100%);margin:auto}
-.eyebrow{margin:0 0 20px;color:var(--mid)}
-.section h2{max-width:1050px;margin:0;font:400 clamp(46px,6vw,88px)/.98 Georgia,serif;letter-spacing:-.05em;text-wrap:balance}
-
-.editorial-link{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-.synthetic-label{margin:30px 0 0;color:rgba(255,255,255,.56);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-
-    .workflows{background:var(--white)}
-.hypothesis-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(46px,6vw,76px);border-block:1px solid var(--line)}
-.hypothesis{padding:28px 28px 30px 0}
-.hypothesis+.hypothesis{padding-left:28px;border-left:1px solid var(--line)}
-.hypothesis h3{margin:0 0 17px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
-.hypothesis p{margin:0;color:var(--muted);font:400 17px/1.55 Georgia,serif}
-
-    .testing{background:var(--olive);color:var(--white)}
-.testing .eyebrow{color:#eef2dc}
-.testing h2{max-width:1080px;font-size:clamp(39px,5vw,72px)}
-.test-questions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(44px,6vw,70px);counter-reset:questions}
-.test-question{padding:24px 24px 28px;border-top:1px solid rgba(255,255,255,.55);background:rgba(30,61,43,.12);font:400 clamp(19px,2vw,27px)/1.35 Georgia,serif}
-.test-question:before{counter-increment:questions;content:"0" counter(questions);display:block;margin-bottom:22px;color:rgba(255,255,255,.68);font:800 10px/1 Inter,sans-serif;letter-spacing:.16em}
-
-    .research{padding-top:clamp(70px,8vw,110px);padding-bottom:clamp(70px,8vw,110px);background:var(--warm)}
-.research h2{font-size:clamp(42px,5vw,68px)}
-.research-intro{max-width:820px;margin:24px 0 0;color:var(--muted);font:400 18px/1.55 Georgia,serif}
-.research-grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:42px;border-top:1px solid var(--line)}
-.research-item{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:20px 24px 20px 0;border-bottom:1px solid var(--line)}
-.research-item:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
-.research-name{margin:0;color:var(--mid)}
-.research-item p{margin:0;color:var(--muted);font:400 14px/1.5 Georgia,serif}
-.research-item strong{color:var(--ink)}
-
-    .review{background:var(--pale)}
-.review h2{font-size:clamp(48px,6vw,82px)}
-.review-copy{max-width:800px;margin:30px 0;color:var(--muted);font:400 clamp(18px,1.6vw,22px)/1.55 Georgia,serif}
-.review .editorial-link{color:var(--mid)}
-
-    .final-cta{background:var(--deep);color:var(--white)}
-.final-cta .eyebrow{color:#b8d4bc}
-.final-cta h2{max-width:1000px}
-.final-cta p:not(.eyebrow){max-width:760px;margin:28px 0 36px;color:rgba(255,255,255,.74);font:400 clamp(18px,1.6vw,22px)/1.55 Georgia,serif}
-
-    .site-footer{padding:34px clamp(26px,8vw,120px) 42px;border-top:1px solid rgba(238,234,222,.16);background:#06100d;color:rgba(238,234,222,.68);font-size:11px;line-height:1.65}
-.site-footer__inner{width:min(1160px,100%);margin:auto;display:grid;grid-template-columns:minmax(260px,1.6fr) 1fr;gap:28px 60px}
-.site-footer p{margin:0}
-.site-footer strong{color:#eeeade;font-weight:700}
-.site-footer a{color:inherit;text-underline-offset:4px}
-.site-footer a:focus-visible{outline:2px solid currentColor;outline-offset:6px}
-.site-footer__links{display:flex;flex-wrap:wrap;align-content:start;gap:12px 24px}
-
-    @media(max-width:780px){.site-nav{height:68px;padding:0 22px}
-.hero{min-height:auto;padding:78px 22px 70px}
-.hero h1{font-size:clamp(56px,16vw,76px)}
-.hero-copy{grid-template-columns:1fr}
-.section{padding:78px 22px}
-.section h2{font-size:clamp(43px,13vw,62px)}
-.record-compare{grid-template-columns:1fr}
-.versus{min-height:54px}
-.hypothesis-grid,.test-questions,.research-grid{grid-template-columns:1fr}
-.hypothesis,.hypothesis+.hypothesis{padding:24px 0;border-left:0}
-.hypothesis+.hypothesis{border-top:1px solid var(--line)}
-.research-item,.research-item:nth-child(even){grid-template-columns:1fr;padding:20px 0;border-left:0}
-.site-footer{padding:30px 22px 36px}
-.site-footer__inner{grid-template-columns:1fr;gap:22px}
-.site-footer__links{gap:10px 20px}
-}
-
-    @media(max-width:780px){
-      .walkthrough{padding:76px 22px}
-      .walk-sources,.walk-state-grid,.walk-resolution-grid,.walk-payoff{grid-template-columns:1fr}
-      .walk-not-equal{padding:0 4px}
-      .walk-state-item,.walk-state-item+.walk-state-item{padding:16px 0;border-left:0;border-top:1px solid rgba(245,243,235,.16)}
-      .walk-state-item:first-child{border-top:0}
-      .walk-payoff{gap:18px}
-    }
-
-    @media(max-width:430px){
-      .walk-not-equal{font-size:28px}
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      .walkthrough.walk-enhanced .walk-reveal{opacity:1;transform:none;transition:none}
-    }
-  </style>
 </head>
-<body>
-  <nav class="site-nav" aria-label="Primary">
-    <div class="wordmark">GigaCarbon</div>
-    <a class="nav-link" href="/evidence-demo/">Evidence Demo</a>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">GigaCarbon</p>
-      <h1>Messy records in.<br>Traceable evidence out.</h1>
-      <div class="hero-copy">
-        <div>
-          <p>GigaCarbon sits between messy operational records and the person who has to make the call. It shows what the records agree on, what conflicts, what is missing, and how an accepted value was reached.</p>
-          <div class="status">Early prototype. Real workflow testing underway.</div>
+<body class="home hero-editorial">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="/" aria-label="GigaCarbon home"><img src="/assets/gigacarbon-triangle.png" alt="" width="34" height="34">GigaCarbon</a>
+    <nav class="nav" aria-label="Primary"><a href="#case">The case</a><a href="#evidence">The evidence</a><a href="/archive/">Archive</a><a class="nav-contact" href="mailto:contact@5ceco.com?subject=Fleet%20maintenance%20pilot%20discussion">Discuss a pilot <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="home-title"><div class="shell hero-grid">
+      <p class="hero-category">Fleet maintenance <span>/ evidence review</span></p>
+      <div class="hero-content">
+        <h1 id="home-title">Maintenance records,<br> read together.</h1>
+        <p class="hero-summary">GigaCarbon compares defect reports, inspections, repairs and vehicle-use records. It brings potential discrepancies and missing information into view, with each question linked to its source.</p>
+        <p class="hero-reviewer">The judgement stays with the reviewer.</p>
+        <div class="hero-actions">
+          <a class="hero-primary" href="mailto:contact@5ceco.com?subject=Fleet%20maintenance%20pilot%20discussion">Discuss a pilot <span aria-hidden="true">↗</span></a>
+          <a class="hero-secondary" href="#evidence">Explore the evidence <span aria-hidden="true">↘</span></a>
         </div>
-        <div class="actions">
-          <a class="button primary" href="/evidence-demo/">View evidence demo</a>
-          <a class="button" href="mailto:contact@5ceco.com">Talk to us</a>
-        </div>
+        <p class="hero-qualification"><strong>Synthetic demonstration.</strong> Real-world validation pending.</p>
       </div>
-    </div>
-  </header>
+    </div></section>
 
-  <main>
-    <section class="walkthrough" aria-labelledby="walkthrough-title" data-walkthrough>
-      <div class="inner">
-        <p class="eyebrow">Evidence walkthrough</p>
-        <h2 id="walkthrough-title">Two systems can describe the same event differently.</h2>
-        <p class="walkthrough-intro">A compact synthetic example of how GigaCarbon preserves disagreement, structures the evidence, and leaves the judgement with the operator.</p>
-
-        <div class="walk-sequence">
-          <div class="walk-sources walk-reveal" style="--reveal-delay:0ms" aria-label="Conflicting source records">
-            <article class="walk-card"><strong>Fuel Portal</strong><span>Vehicle X</span><span>Original source assertion</span></article>
-            <div class="walk-not-equal" aria-label="does not equal">≠</div>
-            <article class="walk-card"><strong>Field / operational record</strong><span>Vehicle Y</span><span>Original source assertion</span></article>
-            <p class="walk-source-payoff">Both records exist. Somebody still has to establish what actually happened.</p>
-          </div>
-
-          <section class="walk-panel walk-state walk-reveal" style="--reveal-delay:120ms" aria-label="Structured evidence state">
-            <span class="walk-label">GigaCarbon</span><h3>Structure the evidence before the judgement.</h3>
-            <div class="walk-state-grid">
-              <div class="walk-state-item"><b>Original assertions</b><span>Portal → Vehicle X<br>Field → Vehicle Y</span></div>
-              <div class="walk-state-item"><b>Conflict</b><span>Vehicle attribution disagrees</span></div>
-              <div class="walk-state-item"><b>Context</b><span>Vehicle X broke down.<br>Backup Vehicle Y was used.</span></div>
-              <div class="walk-state-item"><b>Status</b><span>Human judgement required.</span></div>
-            </div>
-            <p class="walk-provenance-line">Original records remain preserved.</p>
-          </section>
-
-          <section class="walk-panel walk-resolution walk-reveal" style="--reveal-delay:240ms" aria-label="Human resolution and accepted state">
-            <span class="walk-label">Human resolution</span><h3>Operator accepts Vehicle Y.</h3>
-            <div class="walk-resolution-grid">
-              <div class="walk-accepted"><span>Accepted state</span><strong>Vehicle Y</strong></div>
-              <div class="walk-provenance"><span>Provenance trail remains visible</span><p>Portal originally recorded → <strong>Vehicle X</strong><br>Field / operational record → Vehicle Y<br>Context: Vehicle X broke down and Vehicle Y was the backup.</p></div>
-            </div>
-            <div class="walk-payoff"><p>How did this clean value become clean?<br><strong>GigaCarbon keeps the path reconstructable.</strong></p><p><strong>GigaCarbon prepares the evidence.</strong><br>The operator still makes the judgement.</p></div>
-          </section>
-        </div>
-        <div class="walk-footer"><p class="synthetic-label">Synthetic example based on a practitioner-described workflow. Not customer data.</p><a class="editorial-link" href="/evidence-demo/">See the full synthetic example →</a></div>
+    <section class="case-section" id="case" aria-labelledby="case-title"><div class="shell">
+      <div class="section-heading"><p class="eyebrow">01 / One question in the record</p><h2 id="case-title">Closed in the system.<br><span>Still worth checking.</span></h2></div>
+      <div class="case-intro"><p>A defect is reported. A vehicle is used. Repair and test entries follow. The records show these events, but dates alone do not establish every step between them.</p><a class="underlined-link" href="/evidence-demo/">Explore the full synthetic FN128 case <span aria-hidden="true">↗</span></a></div>
+      <div class="chronology" aria-label="Synthetic FN128 source chronology">
+        <div class="chronology-head"><span>FN128 / DR-0038</span><span>Synthetic source chronology · July 2026</span></div>
+        <ol>
+          <li><span class="chronology-date">16 Jul</span><span class="chronology-event">Defect reported; inspection entry</span><span class="chronology-source">defects.csv#32 · workshop.csv#88</span></li>
+          <li><span class="chronology-date">17–18 Jul</span><span class="chronology-event">Vehicle-use entries</span><span class="chronology-source">vehicle_use.csv#38, #154</span></li>
+          <li><span class="chronology-date">19 Jul</span><span class="chronology-event">Repair, brake test, sign-off and return-to-service entries; order unknown</span><span class="chronology-source">workshop.csv#186, #214, #172, #101</span></li>
+        </ol>
+        <div class="chronology-question"><span class="question-mark" aria-hidden="true">?</span><div><span class="mini-label">The question for a reviewer</span><p>What supported the recorded use while DR-0038 was open?</p></div></div>
       </div>
-    </section>
+      <p class="case-limit"><strong>What these records cannot settle.</strong> They do not establish whether use on 17–18 July was permitted or the order of the date-only workshop entries on 19 July. The screen does not decide roadworthiness, authorisation or compliance.</p>
+    </div></section>
 
-    <section class="section workflows">
-      <div class="inner">
-        <p class="eyebrow">Where we're testing it</p>
-        <h2>We’re testing the same approach in several operational workflows.</h2>
-        <div class="hypothesis-grid">
-          <article class="hypothesis"><h3>Fuel reconciliation</h3><p>Portal and field records disagree before an accepted operating record can be used downstream.</p></article>
-          <article class="hypothesis"><h3>Repair / invoice review</h3><p>Several records must be checked before money is approved.</p></article>
-          <article class="hypothesis"><h3>Fleet analysis</h3><p>A consultant needs to establish what client records actually support before applying professional judgement.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="evidence-section" id="evidence" aria-labelledby="evidence-title"><div class="shell">
+      <div class="evidence-lead"><div><p class="eyebrow">02 / From question to source</p><h2 id="evidence-title">See the evidence<br>behind every question.</h2></div><p>One view brings the candidate question, its uncertainty and the original cited entries into the same frame. The capture below comes from a local Workbench running a synthetic fixture.</p></div>
+      <figure class="workbench-figure"><div class="workbench-topline"><span><span class="small-triangle" aria-hidden="true"></span> REVIEW WORKBENCH / FN128</span><span>SYNTHETIC DEMONSTRATION</span></div><a class="evidence-image-link" href="/assets/workbench/fn128-evidence.png" target="_blank" rel="noopener" aria-label="Open full-size synthetic FN128 Review Workbench screenshot with source references in a new tab"><img src="/assets/workbench/fn128-evidence.png" alt="Synthetic FN128 Review Workbench screen showing a candidate question, uncertainty and cited CSV source rows" width="1600" height="913"></a><figcaption><span>Actual local Workbench capture · no customer records</span><span>Open full-size image ↗</span></figcaption></figure>
+      <div class="capability-row"><p><span>Compare</span> related records.</p><p><span>Find</span> discrepancies and missing information.</p><p><span>Trace</span> questions to the original entries.</p></div>
+      <p class="evidence-limit">This demonstration shows source-linked candidate questions on synthetic data. It does not establish native R2C compatibility, performance on operational exports, measured time savings or customer outcomes. <a href="/evidence-demo/">Read the case and its limits ↗</a></p>
+    </div></section>
 
-    <section class="section testing">
-      <div class="inner">
-        <p class="eyebrow">What we are testing</p>
-        <h2>The question is not whether messy records exist. They do. The question is whether GigaCarbon can reduce the work required to turn those records into traceable, usable evidence without hiding uncertainty or taking judgement away from the expert.</h2>
-        <div class="test-questions">
-          <div class="test-question">Does it reduce manual reconstruction?</div>
-          <div class="test-question">Does it preserve the reasoning behind accepted corrections?</div>
-          <div class="test-question">Would the practitioner use it on the next case?</div>
-        </div>
-      </div>
-    </section>
+    <section class="ambition-section" aria-labelledby="ambition-title"><div class="shell ambition-grid"><div><p class="eyebrow">03 / Where this begins</p><h2 id="ambition-title">Built for the decisions that follow.</h2></div><div><p>We're beginning with fleet-maintenance reviews. The longer-term ambition is to make the evidence behind consequential operational decisions easier to inspect, question and verify.</p><p>For now, the work is narrower: test whether source-linked questions from existing exports are useful to the people who review them.</p></div></div></section>
 
-    <section class="section research">
-      <div class="inner">
-        <p class="eyebrow">Public testing</p>
-        <h2>Research that got us here</h2>
-        <p class="research-intro">Earlier Route Proof work tested whether fleet records could support specific conclusions. Positive, negative and corrected results were retained. That work led to the current hypothesis: structure the evidence and preserve uncertainty before the expert makes the call.</p>
-        <div class="research-grid">
-          <article class="research-item"><h3 class="research-name">Leeds</h3><p><strong>Correction retained.</strong> 0 of 1,482 records were independently recomputable for fuel efficiency. An earlier approximately 83% claim was retracted.</p></article>
-          <article class="research-item"><h3 class="research-name">Mesa</h3><p><strong>Positive control.</strong> 110,976 eligible records supported a narrower aggregate source-reported-quantity question.</p></article>
-          <article class="research-item"><h3 class="research-name">Cincinnati</h3><p><strong>Classification changed.</strong> 14 of 134 active assets changed classification under an evidence-bounded treatment.</p></article>
-          <article class="research-item"><h3 class="research-name">Synthetic GPS</h3><p><strong>Unsupported total refused.</strong> Observed distance and endpoint displacement remained separate; total route distance was not established.</p></article>
-          <article class="research-item"><h3 class="research-name">Madagascar</h3><p><strong>Mixed result.</strong> Consequential workbook problems were identified, but decision-triage failed.</p></article>
-          <article class="research-item"><h3 class="research-name">WCC</h3><p><strong>Negative feasibility result.</strong> Required evidence could not be retrieved sufficiently to run the intended benchmark.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section review">
-      <div class="inner">
-        <p class="eyebrow">First review</p>
-        <h2>One case. Narrow scope.</h2>
-        <p class="review-copy">A first review can be structured so records remain in your environment, or use a redacted/minimised case or small approved extract. We do not ask anyone to breach an NDA or internal data policy.</p>
-        <a class="editorial-link" href="/data-handling/">How first reviews can work →</a>
-      </div>
-    </section>
-
-    <section class="section final-cta">
-      <div class="inner">
-        <p class="eyebrow">Work with us</p>
-        <h2>Have a workflow where the records don’t reconcile cleanly?</h2>
-        <p>We’re looking for real cases where someone already has to resolve conflicting or incomplete operational evidence before a decision can proceed.</p>
-        <a class="button primary" href="mailto:contact@5ceco.com">Show us one case</a>
-      </div>
-    </section>
+    <section class="pilot-section" aria-labelledby="pilot-title"><div class="shell pilot-grid"><div><p class="eyebrow">04 / First review</p><h2 id="pilot-title">Start with<br>one review.</h2></div><div class="pilot-copy"><p>We're working with early practitioners to establish whether GigaCarbon can identify useful questions from existing maintenance exports without adding more preparation work than it removes.</p><p class="handling-note">Scope, permission and data handling must be agreed before anyone sends operational records. <a href="/data-handling/">See the first-review options ↗</a></p><a class="action-primary" href="mailto:contact@5ceco.com?subject=Fleet%20maintenance%20pilot%20discussion">Discuss a pilot <span aria-hidden="true">↗</span></a><span class="email-note">Opens your email app · contact@5ceco.com</span></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p><strong>GigaCarbon Ltd</strong><br>Company No. 16597413 · Registered in England and Wales<br>Registered office: Flat 38 Royal Belgrave House, Hugh Street, London, England, SW1V 1RR</p>
-      <div class="site-footer__links">
-        <a href="mailto:contact@5ceco.com">contact@5ceco.com</a>
-        <a href="/evidence-demo/">Evidence Demo</a>
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/data-handling/">Data Handling / First Review</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    const walkthrough=document.querySelector('[data-walkthrough]');
-    const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const animationDisabled=new URLSearchParams(location.search).get('animation')==='off';
-
-    if(walkthrough&&!reducedMotion&&!animationDisabled&&'IntersectionObserver' in window){
-      walkthrough.classList.add('walk-enhanced');
-      const observer=new IntersectionObserver(entries=>{
-        for(const entry of entries){
-          if(entry.isIntersecting){
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        }
-      },{threshold:.12});
-      observer.observe(walkthrough);
-    }
-  </script>
+  <footer class="site-footer"><div class="shell footer-grid"><p><strong>GigaCarbon Ltd</strong><br>Company No. 16597413 · Registered in England and Wales<br>Registered office: Flat 38 Royal Belgrave House, Hugh Street, London, England, SW1V 1RR</p><nav class="footer-links" aria-label="Footer"><a href="mailto:contact@5ceco.com">contact@5ceco.com</a><a href="/evidence-demo/">FN128 example</a><a href="/data-handling/">Data handling</a><a href="/privacy/">Privacy policy</a><a href="/archive/">Earlier research archive</a></nav></div></footer>
 </body>
 </html>
